@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">دریابانی بوشهر</string>
+
+    <string name="my_nastaliq_font">nastaliq.ttf</string>
+    <string name="btn_back">بازگشت</string>
+
+    <string name="about_me_title">درباره برنامه</string>
+    <string name="about_me_message">این برنامه برای آشنایی مردم ساحل نشین بوشهری با موضوعاتی که در این مناطق رخ می دهد با همکاری دفتر تحقیقات فرماندهی دریابانی بوشهر ساخته شده است جهت ارتباط با سازنده برنامه به ایمیل mhnikmaram1@gmail.com پیام دهید</string>
+
+    <string name="contact_me_title">تماس با من</string>
+    <string name="contact_me_message">VinousEng@Gmail.Com</string>
+
+    <string name="title_activity_tbl_of_content">لیست مطالب</string>
+
+    <string name="title_activity_book_content">متن</string>
+
+    <string name="title_activity_tbl_of_favorite_books">لیست علاقه مندی</string>
+
+    <string name="title_activity_search">جستجو</string>
+
+    <string name="search_question">متن موردنظر؟</string>
+    <string name="search_by_title"> عنوان</string>
+    <string name="search_by_content">محتوا</string>
+    <string name="search_by_author">بر اساس نویسنده</string>
+
+    <string name="search_button_label">بیاب</string>
+    <string name="search_error_enter_text">متن موردنظر را وارد کنید</string>
+    <string name="search_error_not_found">جستجو بی نتیجه بود</string>
+
+    <string name="title_activity_settings">تنظیمات</string>
+
+    <string name="sound_settings">وضعیت پخش صدا:</string>
+    <string name="sound_settings_on">در حال پخش</string>
+    <string name="sound_settings_off">متوقف</string>
+
+    <string name="screen_light_settings">وضعیت نور صفحه:</string>
+    <string name="screen_light_settings_on">همیشه روشن</string>
+    <string name="screen_light_settings_general">معمولی</string>
+
+    <string name="font_size_settings">اندازه متن:</string>
+    <string name="font_size_settings_sample">قلم</string>
+
+    <string name="title_activity_welcom">" "</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="txt">فرماندهی دریابانی بوشهر</string>
+</resources>

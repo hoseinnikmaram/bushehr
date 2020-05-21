@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green">#00cea3</color>
+    <color name="khali">#00FFFFFF</color>
+    <color name="mode_background_when_selected">#7FF2EEEE</color>
+
+    <color name="black_overlay">#66000000</color>
+
+</resources>

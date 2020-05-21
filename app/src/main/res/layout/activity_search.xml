@@ -1,0 +1,93 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.irprogram.ebook.search"
+    android:background="@drawable/poste"
+
+    android:padding="10dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/txtSearchKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:onClick="onClick_search"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/title_activity_search"
+
+        android:textSize="30dp" />
+
+
+
+</LinearLayout>
+
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/rgItems">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_by_title"
+                android:id="@+id/rbSearchByTitle"
+                android:textSize="30dp"
+                android:padding="10dp"
+                android:checked="true" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_by_content"
+                android:id="@+id/rbSearchByContent"
+                android:padding="10dp"
+                android:textSize="30dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_by_author"
+                android:id="@+id/rbSearchByAuthor"
+                android:visibility="gone"
+                android:padding="10dp"
+                android:textSize="30dp" />
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+
+
+        </RelativeLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/resultListView"
+            android:layout_gravity="center_horizontal"
+            android:headerDividersEnabled="false" />
+    </LinearLayout>
+</RelativeLayout>

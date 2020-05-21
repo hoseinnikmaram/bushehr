@@ -1,0 +1,116 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context="com.irprogram.ebook.book_content"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/linearLayout3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:padding="3dp"
+            android:id="@+id/txtBookTitle"
+            android:layout_gravity="center_horizontal"
+            android:textSize="25sp"
+            android:textColor="#010101" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="author"
+                android:id="@+id/txtBookAuthor"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:visibility="invisible"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date"
+                android:id="@+id/txtBookDate"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="invisible"
+                android:textSize="30dp" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView"
+            android:background="@drawable/poste"
+            >
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/WebViewBookContent"
+
+                android:layout_gravity="center_horizontal" />
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout3">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/btn_back"
+            android:visibility="gone"
+            android:id="@+id/btnBack"
+            android:layout_gravity="center_vertical"
+            android:onClick="onBtnBackClick"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/ShareText"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/share"
+            android:padding="10dp"
+            android:onClick="onShareTextClick" />
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/imgFavorite"
+            android:layout_gravity="center_vertical"
+            android:onClick="onImgFavoriteClick"
+            android:padding="10dp" />
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/imgSee"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:onClick="onImgSeeClick"
+            android:padding="10dp" />
+    </LinearLayout>
+</RelativeLayout>

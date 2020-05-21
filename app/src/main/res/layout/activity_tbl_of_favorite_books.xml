@@ -1,0 +1,40 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.irprogram.ebook.tblOfFavoriteBooks"
+    android:background="@drawable/poste"
+    android:padding="3dp">
+    <TextView
+        android:id="@+id/txt_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="هیچ علاقه مندی ثبت نشده"
+        android:visibility="gone"
+        android:textSize="20sp"
+        android:padding="10sp"
+        android:layout_marginTop="40dp"
+        android:background="@color/cardview_light_background"
+        android:gravity="center"
+        android:textColor="#000000"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/tblOfFavoriteBookListView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btnBack" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_back"
+        android:visibility="gone"
+        android:id="@+id/btnBack"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:onClick="onBtnBackClick" />
+
+</RelativeLayout>

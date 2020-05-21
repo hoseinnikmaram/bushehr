@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ly_groop"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:background="@drawable/poste"
+    android:layout_centerInParent="true">
+
+    <android.support.v4.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/poste">
+
+
+        <LinearLayout
+            android:id="@+id/activity_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/poste"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/marzban"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="3dp"
+                android:onClick="ondaryabanClick"
+                android:orientation="vertical"
+                android:paddingLeft="0dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+
+                >
+
+                <include layout="@layout/ic_marzban" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/mavad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="3dp"
+                android:onClick="onmavadClick"
+                android:orientation="vertical"
+                android:paddingLeft="0dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+
+                >
+
+                <include layout="@layout/ic_mavad" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ghachachagh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="3dp"
+                android:onClick="onghachaghClick"
+                android:orientation="vertical"
+                android:paddingLeft="0dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+
+                >
+
+                <include layout="@layout/ic_ghachagh" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bushehr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="1dp"
+                android:orientation="vertical"
+                android:paddingLeft="1dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="1dp">
+
+                <include layout="@layout/ic_bushehr" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/malevan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="vertical"
+                android:paddingLeft="1dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp">
+
+                <include layout="@layout/ic_malevan" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

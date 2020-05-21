@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:elevation="5dp"
+    android:layout_margin="5dp"
+
+    android:background="@color/green">
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:id="@+id/icon"
+        android:padding="10dp"
+        android:src="@drawable/marz"
+        android:focusableInTouchMode="false" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        >
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="title"
+            android:gravity="center_vertical|start"
+
+            android:textAlignment="center"
+            android:textColor="#010101"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="author"
+            android:visibility="gone"
+            android:id="@+id/txtAuthor"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:id="@+id/setSee"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/setFav"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/setSee" />
+    </RelativeLayout>
+
+</LinearLayout>
