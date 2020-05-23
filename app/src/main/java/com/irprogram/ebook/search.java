@@ -5,13 +5,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -24,6 +27,7 @@ public class search extends Activity
     private ListView resultListView;
 
     private List<HashMap<String , Object>> resultBooks;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,12 +39,22 @@ public class search extends Activity
 
         resultListView = (ListView) findViewById(R.id.resultListView);
         etSearchKey = (SearchView) findViewById(R.id.txtSearchKey);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        title    =(TextView)toolbar.findViewById(R.id.title);
+        ImageView ic_back = (ImageView) toolbar.findViewById(R.id.ic_back);
         db = new DatabaseHandler( getBaseContext() );
 
         etSearchKey.setIconifiedByDefault(false);
         etSearchKey.isActivated();
 
+        title.setText("جستجو");
+        ic_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+        myClass.textview_face(this,"IRANSans",title);
 
         etSearchKey.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
 

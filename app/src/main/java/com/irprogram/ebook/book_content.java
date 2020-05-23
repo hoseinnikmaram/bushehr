@@ -2,15 +2,23 @@ package com.irprogram.ebook;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.irprogram.ebook.util.URLImageParser;
+
+import java.io.IOException;
 import java.util.HashMap;
 
 public class book_content extends Activity
@@ -19,16 +27,15 @@ public class book_content extends Activity
 
     private HashMap<String , Object> book;
 
-    private TextView title , author , date;
-    private WebView content;
-    private ImageView fav , visit;
+    private TextView title ;
+    private ImageView fav , visit,ic_back;
 
     private MediaPlayer player;
     private boolean player_state = false;
+    private WebView content;
 
 
-
-  //  public void play_music_start()
+    //  public void play_music_start()
   //  {
     //    try
       //  {
@@ -75,16 +82,26 @@ public class book_content extends Activity
 
         book = db.getBookContent( data.getString("id") );
 
-        title = (TextView) findViewById(R.id.txtBookTitle);
-        author = (TextView) findViewById(R.id.txtBookAuthor);
-        date = (TextView) findViewById(R.id.txtBookDate);
-        content = (WebView) findViewById(R.id.WebViewBookContent);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+          title    =(TextView)toolbar.findViewById(R.id.title);
+        ic_back    =(ImageView)toolbar.findViewById(R.id.ic_back);
+
+        content = (WebView) findViewById(R.id.text_content);
         fav = (ImageView) findViewById(R.id.imgFavorite);
         visit = (ImageView) findViewById(R.id.imgSee);
 
         title.setText( book.get("title").toString() );
-        author.setText( book.get("author").toString() );
-        date.setText( book.get("date").toString() );
+
+
+        ic_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+
 
         String font_size = String.valueOf( db.getFontSize() );
 
@@ -103,6 +120,22 @@ public class book_content extends Activity
         content.getSettings().setJavaScriptEnabled(true);
         content.setBackgroundColor(0x00000000);
 
+/*
+        URLImageParser p = new URLImageParser(text_content, this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+         //   text_content.setText(Html.fromHtml(main_txt, Html.FROM_HTML_MODE_COMPACT));
+            Spanned htmlSpan = Html.fromHtml(main_txt, Html.FROM_HTML_MODE_COMPACT,p, null);
+            text_content.setText(htmlSpan);
+
+        } else {
+            Spanned htmlSpan = Html.fromHtml(main_txt,p, null);
+            text_content.setText(htmlSpan);
+        }
+
+
+ */
+      //  text_content.setTextSize(Float.parseFloat(font_size));
         fav.setImageResource(
                 Integer.parseInt(book.get("fav_flag").toString())
         );
@@ -169,8 +202,8 @@ public class book_content extends Activity
 
         i.putExtra(Intent.EXTRA_SUBJECT, "subject");
 
-        i.putExtra( Intent.EXTRA_TEXT , book.get("content").toString() );
-
+       // i.putExtra( Intent.EXTRA_TEXT , book.get("content").toString() );
+        i.putExtra( Intent.EXTRA_TEXT ,  book.get("content").toString() );
         startActivity(Intent.createChooser(i, "sending"));
 
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

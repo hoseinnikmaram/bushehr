@@ -1,12 +1,16 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.irprogram.ebook.search"
     android:background="@drawable/poste"
+        android:orientation="vertical"
+    android:layoutDirection="rtl"
+    >
 
-    android:padding="10dp">
+    <include layout="@layout/toolbar_layout" />
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -90,4 +94,4 @@
             android:layout_gravity="center_horizontal"
             android:headerDividersEnabled="false" />
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

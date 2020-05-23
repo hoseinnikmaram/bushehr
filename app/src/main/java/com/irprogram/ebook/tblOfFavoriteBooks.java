@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ public class tblOfFavoriteBooks extends Activity
 
     private DatabaseHandler db;
     private TextView tx;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,9 +35,19 @@ public class tblOfFavoriteBooks extends Activity
 
         myClass.textview_face(this,"IRANSans",tx);
 
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        title    =(TextView)toolbar.findViewById(R.id.title);
+        ImageView ic_back = (ImageView) toolbar.findViewById(R.id.ic_back);
         getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+        title.setText("علاقه ها");
+        myClass.textview_face(this,"IRANSans",title);
 
+        ic_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         favoriteListView = (ListView) findViewById(R.id.tblOfFavoriteBookListView);
 
         get_book_list();

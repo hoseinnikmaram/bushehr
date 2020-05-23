@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -22,14 +24,28 @@ public class tblOfContent extends Activity
 
     private DatabaseHandler db;
     private String auther;
+    private TextView title;
+    private ImageView ic_back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tbl_of_content);
         TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        title    =(TextView)toolbar.findViewById(R.id.title);
+        ic_back    =(ImageView)toolbar.findViewById(R.id.ic_back);
         getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+
+        title.setText("مطالب");
+        ic_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+        myClass.textview_face(this,"IRANSans",title);
 
         contentListView = (ListView) findViewById(R.id.tblOfContentListView);
 

@@ -25,7 +25,7 @@
                 android:textColor="#010101"
                 android:textSize="25dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:text="روشن ماندن صفحه    "
                 app:theme="@style/SwitchTheme"
                 android:checked="false"/>
@@ -38,13 +38,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="25dp"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="30dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="اندازه متن"
-                android:layout_marginRight="10dp"
-
                 android:textSize="25dp"
                 android:fontFamily="@font/iran"
                 android:textColor="#010101"
@@ -53,11 +51,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/seekbar_id"
-                    android:layout_marginTop="20dp"
+                    android:layout_margin="30dp"
                     android:min="15"
-                    android:layout_marginRight="5dp"
                     android:isScrollContainer="true"
-                    android:max="30"/>
+                    android:max="70"/>
 
                 
             </LinearLayout>
