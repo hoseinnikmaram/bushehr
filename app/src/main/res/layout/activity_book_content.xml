@@ -25,11 +25,11 @@
             android:id="@+id/scrollView"
             >
 
-            <WebView
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/text_content"
-
+                android:id="@+id/textcontent"
                 android:layout_gravity="center_horizontal" />
         </ScrollView>
 

@@ -32,7 +32,8 @@ public class book_content extends Activity
 
     private MediaPlayer player;
     private boolean player_state = false;
-    private WebView content;
+  //  private WebView content;
+    private TextView text_content;
 
 
     //  public void play_music_start()
@@ -87,7 +88,10 @@ public class book_content extends Activity
           title    =(TextView)toolbar.findViewById(R.id.title);
         ic_back    =(ImageView)toolbar.findViewById(R.id.ic_back);
 
-        content = (WebView) findViewById(R.id.text_content);
+     //   content = (WebView) findViewById(R.id.text_content);
+
+        text_content = (TextView) findViewById(R.id.textcontent);
+
         fav = (ImageView) findViewById(R.id.imgFavorite);
         visit = (ImageView) findViewById(R.id.imgSee);
 
@@ -114,13 +118,13 @@ public class book_content extends Activity
                     "</body>" +
                 "</html>";
 
-        content.loadDataWithBaseURL(
-                null , main_txt , "text/html; charset=utf-8" , "UTF-8" , null
-        );
-        content.getSettings().setJavaScriptEnabled(true);
-        content.setBackgroundColor(0x00000000);
+   //     content.loadDataWithBaseURL(
+    //            null , main_txt , "text/html; charset=utf-8" , "UTF-8" , null
+     //   );
+    //    content.getSettings().setJavaScriptEnabled(true);
+    //    content.setBackgroundColor(0x00000000);
 
-/*
+
         URLImageParser p = new URLImageParser(text_content, this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -133,8 +137,8 @@ public class book_content extends Activity
             text_content.setText(htmlSpan);
         }
 
+        text_content.setTextSize(Float.parseFloat(font_size));
 
- */
       //  text_content.setTextSize(Float.parseFloat(font_size));
         fav.setImageResource(
                 Integer.parseInt(book.get("fav_flag").toString())
